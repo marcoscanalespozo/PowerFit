@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Gym - Reserva de Clases</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Preloader Animation -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="dumbbell">
+                <div class="bar"></div>
+                <div class="weight left"></div>
+                <div class="weight right"></div>
+            </div>
+            <h3 class="loading-text">PowerFit Gym</h3>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="PowerFit Gym" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#classes">Clases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#schedule">Horarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#members">Miembros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Animation -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center text-white hero-content">
+                    <h1 class="display-3 fw-bold mb-4 slide-in-top">TRANSFORMA TU CUERPO</h1>
+                    <p class="lead mb-5 slide-in-bottom">Reserva tus clases en el gimnasio más moderno de la ciudad</p>
+                    <a href="#classes" class="btn btn-primary btn-lg pulse">Ver Clases Disponibles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="fw-bold">Nuestras Clases</h2>
+                <p class="text-muted">Elige entre nuestra variedad de clases profesionales</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Class cards will be loaded dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="fw-bold">Horario de Clases</h2>
+                <p class="text-muted">Planifica tu semana de entrenamiento</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="schedule-filter mb-4">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-primary active" data-day="all">Todos</button>
+                            <button type="button" class="btn btn-outline-primary" data-day="monday">Lunes</button>
+                            <button type="button" class="btn btn-outline-primary" data-day="tuesday">Martes</button>
+                            <button type="button" class="btn btn-outline-primary" data-day="wednesday">Miércoles</button>
+                            <button type="button" class="btn btn-outline-primary" data-day="thursday">Jueves</button>
+                            <button type="button" class="btn btn-outline-primary" data-day="friday">Viernes</button>
+                            <button type="button" class="btn btn-outline-primary" data-day="saturday">Sábado</button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-hover schedule-table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Hora</th>
+                                    <th>Lunes</th>
+                                    <th>Martes</th>
+                                    <th>Miércoles</th>
+                                    <th>Jueves</th>
+                                    <th>Viernes</th>
+                                    <th>Sábado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Schedule will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section id="members" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="fw-bold">Nuestros Miembros</h2>
+                <p class="text-muted">Conoce a nuestra comunidad fitness</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card member-stats-card shadow">
+                        <div class="card-body text-center">
+                            <h3 class="display-4 fw-bold text-primary">1,250+</h3>
+                            <p class="text-muted">Miembros Activos</p>
+                            <div class="progress mt-3">
+                                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" 
+                                     role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card member-stats-card shadow">
+                        <div class="card-body text-center">
+                            <h3 class="display-4 fw-bold text-success">95%</h3>
+                            <p class="text-muted">Satisfacción de Miembros</p>
+                            <div class="progress mt-3">
+                                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+                                     role="progressbar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4 members-grid">
+                <!-- Members will be loaded dynamically -->
+            </div>
+            
+            <div class="text-center mt-5">
+                <button id="loadMoreMembers" class="btn btn-outline-primary">Ver Más Miembros</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Contáctanos</h2>
+                    <p class="text-muted mb-4">¿Tienes preguntas sobre nuestras clases o instalaciones? No dudes en contactarnos.</p>
+                    
+                    <div class="contact-info mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-map-marker-alt me-3 text-primary"></i>
+                            <p>Calle Fitness 123, Ciudad Deportiva</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-phone me-3 text-primary"></i>
+                            <p>+1 234 567 890</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-envelope me-3 text-primary"></i>
+                            <p>info@powerfitgym.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="me-3 text-primary"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="me-3 text-primary"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="me-3 text-primary"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="me-3 text-primary"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">Envíanos un Mensaje</h3>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Asunto">
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">PowerFit Gym</h5>
+                    <p>El mejor gimnasio de la ciudad con instalaciones modernas y entrenadores profesionales.</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white">Inicio</a></li>
+                        <li class="mb-2"><a href="#classes" class="text-white">Clases</a></li>
+                        <li class="mb-2"><a href="#schedule" class="text-white">Horarios</a></li>
+                        <li class="mb-2"><a href="#members" class="text-white">Miembros</a></li>
+                        <li><a href="#contact" class="text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Horario</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Lunes - Viernes: 6:00 - 22:00</li>
+                        <li class="mb-2">Sábado: 8:00 - 20:00</li>
+                        <li>Domingo: 9:00 - 16:00</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-uppercase mb-4">Newsletter</h5>
+                    <p>Suscríbete para recibir promociones y noticias.</p>
+                    <form class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Tu email">
+                            <button class="btn btn-primary" type="button">Suscribir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 PowerFit Gym. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Recordarme</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-muted">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <p class="mb-0">¿No tienes una cuenta? <a href="#" class="text-primary">Regístrate</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Class Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalTitle">Reservar Clase</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="bookingForm">
+                        <div class="mb-3">
+                            <label class="form-label">Clase</label>
+                            <input type="text" class="form-control" id="bookingClassName" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Horario</label>
+                            <input type="text" class="form-control" id="bookingClassTime" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Entrenador</label>
+                            <input type="text" class="form-control" id="bookingClassTrainer" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookingNotes" class="form-label">Notas adicionales</label>
+                            <textarea class="form-control" id="bookingNotes" rows="3"></textarea>
+                        </div>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i> Recibirás un correo de confirmación con los detalles de tu reserva.
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Confirmar Reserva</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-primary back-to-top" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/reservations.js"></script>
+</body>
+</html>
